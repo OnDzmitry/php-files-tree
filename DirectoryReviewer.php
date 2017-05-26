@@ -6,12 +6,12 @@ class DirectoryReviewer
     private $fillerMethod;
     private $separator;
 
-    function __construct()
+    public function __construct()
     {
         $this->fillerMethod = $this->getFillerMethod();
     }
 
-    public function buildTree(string $dirName, string $offset = ''): void
+    public function buildTree(string $dirName, string $offset = ' '): void
     {
         $catalog = scandir($dirName, SCANDIR_SORT_NONE);
         foreach ($catalog as $file) {
